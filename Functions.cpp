@@ -6,9 +6,11 @@
 
 using std::cout; using std::cin; using std::endl;
 
-varArray::varArray(){
-    // initialization
-}
+varArray::varArray(){} // constructor
+
+varArray::varArray(const varArray&){} // copy constructor
+varArray::varArray& operator=(const varArray&){} // overloaded assignment
+varArray::~varArray(){} // deconstructor
 
 void varArray::output() {
     // prints the values in "dArray" of "size"
