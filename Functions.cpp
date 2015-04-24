@@ -11,7 +11,7 @@ varArray::varArray(){
 }
 
 void varArray::output() {
-    // prints the values in "arrayPtr" of "size"
+    // prints the values in "dArray" of "size"
     
     for (int i = 0; i < size; ++i){
         cout << dArray[i] << " " ;
@@ -21,7 +21,7 @@ void varArray::output() {
 
 
 int varArray::check(int number){
-    // returns the index of the element in "arrayPtr" of "size"
+    // returns the index of the element in "dArray" of "size"
     // that corresponds to the element holding "number"
     // if number is not in the array, returns -1
     
@@ -35,7 +35,7 @@ int varArray::check(int number){
 
 
 void varArray::addNumber(int number){
-    // adds "number" to the array pointed to by "arrayPtr" of "size".
+    // adds "number" to the array pointed to by "dArray" of "size".
     // if the number is not already there, if "number" is there - no action
     // Note, the size of the array is thus increased.
     
@@ -55,7 +55,7 @@ void varArray::addNumber(int number){
 }
 
 void varArray::removeNumber(int number){
-    // removes a "number" from the "arrayPtr" of "size".
+    // removes a "number" from the "dArray" of "size".
     // if "number" is not there -- no action
     // note, "size" changes
     
