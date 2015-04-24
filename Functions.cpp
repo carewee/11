@@ -6,7 +6,10 @@
 
 using std::cout; using std::cin; using std::endl;
 
-varArray::varArray() {} // constructor
+varArray::varArray() { // constructor
+    size = 0;
+
+}
 
 
 varArray::varArray(const varArray& origin) { // copy constructor
@@ -37,7 +40,7 @@ void varArray::output() {
     for (int i = 0; i < size; ++i){
         cout << dArray[i] << " " ;
     }
-    
+    cout << endl;
 }
 
 
@@ -66,7 +69,7 @@ void varArray::addNumber(int number){
             tmp[i] = dArray[i];
         }
         
-    tmp[size] = number;
+    tmp[size-1] = number;
     delete [] dArray;
     dArray = tmp;
     size++;
