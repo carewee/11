@@ -6,11 +6,30 @@
 
 using std::cout; using std::cin; using std::endl;
 
-varArray::varArray(){} // constructor
+varArray::varArray() {} // constructor
 
-varArray::varArray(const varArray&){} // copy constructor
-varArray::varArray& operator=(const varArray&){} // overloaded assignment
-varArray::~varArray(){} // deconstructor
+
+varArray::varArray(const varArray& origin) { // copy constructor
+    dArray = new int[origin.size];
+    this->size = origin.size;
+    for(int i =0; i < size; ++i)
+        dArray[i] = origin.dArray[i];
+}
+
+
+varArray& varArray::operator=(const varArray& origin){ // overloaded assignment
+    dArray = new int[origin.size];
+    this->size = origin.size;
+    for(int i =0; i < size; ++i)
+        dArray[i] = origin.dArray[i];
+    return *this;
+}
+
+
+varArray::~varArray() { // deconstructor
+    delete[] dArray;
+}
+
 
 void varArray::output() {
     // prints the values in "dArray" of "size"
@@ -35,7 +54,6 @@ int varArray::check(int number){
 }
 
 
-
 void varArray::addNumber(int number){
     // adds "number" to the array pointed to by "dArray" of "size".
     // if the number is not already there, if "number" is there - no action
@@ -55,6 +73,7 @@ void varArray::addNumber(int number){
     }
 
 }
+
 
 void varArray::removeNumber(int number){
     // removes a "number" from the "dArray" of "size".

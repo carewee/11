@@ -18,7 +18,7 @@ public:
     
     // big three
     varArray(const varArray&); // copy constructor
-    varArray& operator=(const varArray&); // overloaded assignment
+    varArray& operator=(const varArray& origin); // overloaded assignment
     ~varArray(); // destructor
     
 private:
